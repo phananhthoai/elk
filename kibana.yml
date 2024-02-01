@@ -1,0 +1,14 @@
+replicas: 1
+ingress:
+  enabled: true
+  className: public
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+  hosts:
+    - host: kibana.elofun.net
+      paths:
+        - path: /
+  tls:
+     - secretName: kibana-tls
+       hosts:
+         - kibana.elofun.net
